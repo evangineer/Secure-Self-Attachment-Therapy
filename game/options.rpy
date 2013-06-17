@@ -118,7 +118,7 @@ init -1 python hide:
     ## This is the minimum height of the window, including the margins
     ## and padding.
 
-    # style.window.yminimum = 250
+    style.window.yminimum = 140
 
 
     #########################################
@@ -150,7 +150,7 @@ init -1 python hide:
 
     ## The default size of text.
 
-    # style.default.size = 22
+    style.default.size = 19
 
     ## Note that these only change the size of some of the text. Other
     ## buttons have their own styles.
