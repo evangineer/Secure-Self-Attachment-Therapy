@@ -16,9 +16,12 @@ init -1 python hide:
     config.developer = True
 
     ## These control the width and height of the screen.
-
-    config.screen_width = 800
+    
+    config.screen_width = 1024
     config.screen_height = 600
+
+    #config.screen_width = 800
+    #config.screen_height = 600
 
     ## This controls the title of the window, when Ren'Py is
     ## running in a window.
@@ -40,8 +43,8 @@ init -1 python hide:
     ## The theme function takes a number of parameters that can
     ## customize the color scheme.
 
-    theme.marker(
-        ## Theme: Marker
+    theme.glow(
+        ## Theme: Glow
         ## Color scheme: Tree Frog
                                     
         ## The color of an idle widget face.
@@ -72,7 +75,7 @@ init -1 python hide:
         ## The background of the main menu. This can be a color
         ## beginning with '#', or an image filename. The latter
         ## should take up the full height and width of the screen.
-        mm_root = "#ffffff",
+        mm_root = "Title_screen.png",
 
         ## The background of the game menu. This can be a color
         ## beginning with '#', or an image filename. The latter
@@ -118,7 +121,7 @@ init -1 python hide:
     ## This is the minimum height of the window, including the margins
     ## and padding.
 
-    style.window.yminimum = 140
+    style.window.yminimum = 150
 
 
     #########################################
@@ -146,11 +149,11 @@ init -1 python hide:
 
     ## The file containing the default font.
 
-    # style.default.font = "DejaVuSans.ttf"
+    style.default.font = "Cabin-Regular.otf"
 
     ## The default size of text.
 
-    style.default.size = 19
+    style.default.size = 22
 
     ## Note that these only change the size of some of the text. Other
     ## buttons have their own styles.

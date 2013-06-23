@@ -40,8 +40,8 @@ init -1 python hide:
     ## The theme function takes a number of parameters that can
     ## customize the color scheme.
 
-    theme.marker(
-        ## Theme: Marker
+    theme.diamond(
+        ## Theme: Diamond
         ## Color scheme: Tree Frog
                                     
         ## The color of an idle widget face.
@@ -118,7 +118,7 @@ init -1 python hide:
     ## This is the minimum height of the window, including the margins
     ## and padding.
 
-    # style.window.yminimum = 250
+    style.window.yminimum = 180
 
 
     #########################################
@@ -146,11 +146,11 @@ init -1 python hide:
 
     ## The file containing the default font.
 
-    # style.default.font = "DejaVuSans.ttf"
+    style.default.font = "Cabin-Regular.otf"
 
     ## The default size of text.
 
-    # style.default.size = 22
+    style.default.size = 22
 
     ## Note that these only change the size of some of the text. Other
     ## buttons have their own styles.
