@@ -1,20 +1,20 @@
-Sun Jun 23 22:23:28 2013
+Mon Jun 24 22:13:25 2013
 Darwin-12.4.0-x86_64-i386-64bit
 Ren'Py 6.15.5.354
 A Ren'Py Game 0.0
 
 
-Fullscreen mode.
-Screen sizes: virtual=(1024, 600) physical=(1680, 1050)
+Windowed mode.
+Screen sizes: virtual=(1024, 600) physical=(1024, 600)
 Vendor: 'NVIDIA Corporation'
 Renderer: 'NVIDIA GeForce GT 650M OpenGL Engine'
 Version: '2.1 NVIDIA-8.12.47 310.40.00.05f01'
 Display Info: <VideoInfo(hw = 0, wm = 1,video_mem = 0
 	     blit_hw = 0, blit_hw_CC = 0, blit_hw_A = 0,
 	     blit_sw = 0, blit_sw_CC = 0, blit_sw_A = 0,
-	     bitsize  = 0, bytesize = 0,
-	     masks =  (16711680, 65280, 255, 0),
-	     shifts = (0, 224, 3, 0),
+	     bitsize  = 1, bytesize = 0,
+	     masks =  (0, 0, 0, 0),
+	     shifts = (0, 0, 0, 0),
 	     losses =  (0, 0, 0, 0),
 	     current_w = 1680, current_h = 1050
 >
@@ -172,11 +172,11 @@ Texture testing:
 Performance test:
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.010000 seconds.
-- Frame drawn at 0.026000 seconds.
-- Frame drawn at 0.043000 seconds.
-- Frame drawn at 0.060000 seconds.
-- 0.060000 seconds to render 5 frames.
+- Frame drawn at 0.017000 seconds.
+- Frame drawn at 0.025000 seconds.
+- Frame drawn at 0.042000 seconds.
+- Frame drawn at 0.058000 seconds.
+- 0.058000 seconds to render 5 frames.
 Deallocating textures.
 Done deallocating textures.
 About to quit GL.

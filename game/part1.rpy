@@ -7,15 +7,43 @@ define forming_connection_n = Character('Forming Inner Child Bond', color="c8ffc
 define strengthen_connection_n = Character('Strenthening Inner Child Bond', color="c8ffc8")
 define protocol_n = Character('Attachment Exercises', color="c8ffc8")
 
-image introduction 1 = "image_introduction_1.png"
-image introduction 2 = "image_introduction_2.png"
-image introduction 3 = "image_introduction_3.png"
-image introduction 4 = "image_introduction_4.png"
-image introduction 5 = "image_introduction_5.png"
-image introduction 6 = "image_introduction_6.png"
-image introduction 7 = "image_introduction_7.png"
-image introduction 8 = "image_introduction_8.png"
-image introduction 8 transparent = im.MatrixColor("image_introduction_8.png",im.matrix.brightness(0.75))
+image introduction 1 = "images/part1/introduction/image_introduction_1.png"
+image introduction 2 = "images/part1/introduction/image_introduction_2.png"
+image introduction 3 = "images/part1/introduction/image_introduction_3.png"
+image introduction 4 = "images/part1/introduction/image_introduction_4.png"
+image introduction 5 = "images/part1/introduction/image_introduction_5.png"
+image introduction 6 = "images/part1/introduction/image_introduction_6.png"
+image introduction 7 = "images/part1/introduction/image_introduction_7.png"
+image introduction 8 = "images/part1/introduction/image_introduction_8.png"
+image introduction 8 transparent = im.MatrixColor("images/part1/introduction/image_introduction_8.png",im.matrix.brightness(0.75))
+image introduction 9 = "images/part1/introduction/image_introduction_9.png"
+image introduction 10 = "images/part1/introduction/image_introduction_10.png"
+image introduction 11 = "images/part1/introduction/image_introduction_11.png"
+image introduction 12 = "images/part1/introduction/image_introduction_12.png"
+
+image game_background 1 = "images/part1/game_background/image_game_background_1.png"
+image game_background 2 = "images/part1/game_background/image_game_background_2.png"
+image game_background 3 = "images/part1/game_background/image_game_background_3.png"
+image game_background 4 = "images/part1/game_background/image_game_background_4.png"
+image game_background 5 = "images/part1/game_background/image_game_background_5.png"
+image game_background 6 = "images/part1/game_background/image_game_background_6.png"
+image game_background 7 = "images/part1/game_background/image_game_background_7.png"
+image game_background 8 = "images/part1/game_background/image_game_background_8.png"
+image game_background 9 = "images/part1/game_background/image_game_background_9.png"
+image game_background 10 = "images/part1/game_background/image_game_background_10.png"
+
+image attachment_theory 1 = "images/part1/attachment_theory/image_attachment_theory_1.png"
+image attachment_theory 2 = "images/part1/attachment_theory/image_attachment_theory_2.png"
+image attachment_theory 3 = "images/part1/attachment_theory/image_attachment_theory_3.png"
+image attachment_theory 4 = "images/part1/attachment_theory/image_attachment_theory_4.png"
+image attachment_theory 5 = "images/part1/attachment_theory/image_attachment_theory_5.png"
+image attachment_theory 6 = "images/part1/attachment_theory/image_attachment_theory_6.png"
+image attachment_theory 7 = "images/part1/attachment_theory/image_attachment_theory_7.png"
+image attachment_theory 8 = "images/part1/attachment_theory/image_attachment_theory_8.png"
+image attachment_theory 9 = "images/part1/attachment_theory/image_attachment_theory_9.png"
+image attachment_theory 10 = "images/part1/attachment_theory/image_attachment_theory_10.png"
+image attachment_theory 11 = "images/part1/attachment_theory/image_attachment_theory_11.png"
+image attachment_theory 12 = "images/part1/attachment_theory/image_attachment_theory_12.png"
 
 init python:
     part1_menu_content = [
@@ -76,18 +104,22 @@ label introduction:
     introduction_n "problems relating to death"
     show introduction 6
     introduction_n "and financial problems."
+    show introduction 1
+    with hpunch
     with Pause(0.5)
-    with vpunch
-    show introduction 7
-    with Dissolve(2.0)
     show introduction 8
-    with Dissolve(1.0)
+    with Dissolve(1.5)
+    show introduction 9
+    with fade
     
-    introduction_n "These problems may cause overwhelming levels of stress and anxiety and without proper treatment and care, may lead to more
-                    serious mental issues including depression and other mental disorders."
+    introduction_n "These problems may cause overwhelming levels of stress and anxiety and without proper treatment and care..."
+    show introduction 10
+    introduction_n "may lead to more serious mental issues including depression and other mental disorders."
     
+    show introduction 8
+    with fade
     show introduction 8 transparent
-    with Dissolve(1.0)
+    with Dissolve(0.5)
 
     menu:
         introduction_n "Can you guess how many people develop at least one mental or neurological disorder at some stage in life?"
@@ -99,26 +131,57 @@ label introduction:
             jump wrong
     
     label correct:
+        show introduction 11
+        with dissolve
         introduction_n "Corrent! In a study done by the World Health Organization, at some stage in life, one in every four people develop at least one mental or neurological disorder."
+        show introduction 12
+        with dissolve
+        introduction_n "Hence mental disorder is a global and serious problem facing humanity and this game seeks to provide an alternate method for treatment."
         jump game_background
-    label wrong:
+    
+    label wrong:    
+        show introduction 11
+        with dissolve
         introduction_n "Actually, in a study done by the World Health Organization, at some stage in life, 1 in every 4 people develop at least one mental or neurological disorder."
+        show introduction 12
+        with dissolve
+        introduction_n "Hence mental disorder is a global and serious problem facing humanity and this game seeks to provide an alternate method for treatment."
         jump game_background
      
 label game_background:
+    show game_background 1
+    with fade
     game_background_n "This game is designed to help you feel better and teach you important tools and exercises to help you cope with any negative emotions. 
                        It is based on the principles of Secure Self-Attachment Therapy."
-    game_background_n "This game is designed to help people recreate and reinforce neural connections relating to healthy secure attachment types. 
-                       It consists of three sections; each is fundamental to the therapy."
+    show game_background 2
+    with dissolve
+    game_background_n "This game is designed to help people recreate and reinforce neural connections relating to healthy secure attachment types."
+    game_background_n "It consists of three sections; each is fundamental to the therapy."
+    show game_background 3
+    with fade
+    show game_background 4
+    with dissolve
     game_background_n "The first section is to understand the background principles and scientific basis behind the therapy. 
                        It is important for the user to be aware of the workings of the therapy in order to make it more effective."
     game_background_n "This section must be completed to continue with the game and can be accessed again through the menu screen."
+    show game_background 5
+    with fade
+    show game_background 6
+    with dissolve
     game_background_n "The second section seeks to stimulate emotions rooting from your childhood. 
                        In this section you will have the chance to create childhood photo albums, listen to childhood songs and to document childhood stories."
     game_background_n "It is important that you expose yourself to these emotions, and do not be afraid if it gets overwhelming, as this is part of the therapy!"
-    game_background_n "The third section of the game revolves around exercises that promote secure attachment type and it seeks to help you cope with any negative issues. 
-                       Some of the exercises are instructional and some require more interaction and activity from you."
+    show game_background 7
+    with fade
+    game_background_n "The third section of the game revolves around exercises that promote secure attachment type and it seeks to help you cope with any negative issues."
+    show game_background 8
+    with dissolve
+    show game_background 9
+    with dissolve
+    game_background_n "Some of the exercises are instructional and some require more interaction and activity from you."
     game_background_n "It is important that you complete and understand earlier exercises before attempting later ones."
+    show game_background 10
+    with fade
     game_background_n "Overall, Secure self-attachment therapy is firmly based on scientific principles, and it is important to have at least a basic understanding of these principles before undertaking the therapy.
                        There are three reasons for this:"
     game_background_n "First, to establish an understanding of the reasonableness of the therapy, even when some of the exercises might feel rather silly"
@@ -136,17 +199,39 @@ label game_background:
         jump part1_menu
         
 label attachment_theory:
+    show attachment_theory 1
+    with fade
     attachment_n "Attachment theory is a psychological model developed by John Bowlby and Mary Ainsworth. 
                   It is the study of bonds between people and their lasting impacts on psychological well being."
-    attachment_n "The theory concerns the need of every infant to develop an emotionally supportive and dependent relationship with a primary caregiver, whom they become attached to. 
-                  The main focus is the type of attachment that develops for the individual infant to their caregiver."
+    show attachment_theory 2
+    with fade
+    attachment_n "The theory concerns the need of every infant to develop an emotionally supportive and dependent relationship with a primary caregiver, whom they become attached to."
+    show attachment_theory 3
+    with dissolve
+    attachment_n "The main focus is the type of attachment that develops for the individual infant to their caregiver."
+    show attachment_theory 4
+    with dissolve
+    show attachment_theory 5
+    with dissolve
     attachment_n "The attachment type the individual develops during childhood could have a lasting impact on the individual.
                   In order to develop a normal social and emotional behavior, am infant should develop a 'secure' attachment relationship with at least one caregiver."
+    show attachment_theory 6
+    with dissolve
+    show attachment_theory 7
+    with Dissolve(1.0)
+    show attachment_theory 8
     attachment_n "Depending on the relationship between the infant and the caregiver, the infant could develop an insecure attachment relationship with their caregiver. 
                   This could be problematic in later stages of life in forms of mental and behavioral problems."
-    attachment_n "There are three types of insecure attachments, avoidant, anxious and disorganized attachment."
-    attachment_n "Without a secure attachment, the patterns that are formed during infancy have a big effect on later relationships. 
-                  Attachment formed during childhood has been shown to impact romantic relationships, interpersonal attitudes and psychiatric systems."
+    show attachment_theory 9
+    with fade
+    attachment_n "There are three types of insecure attachments, avoidant, disorganized and anxious attachment."
+    show attachment_theory 10
+    with fade
+    attachment_n "Without a secure attachment, the patterns that are formed during infancy have a big effect on the individual at later stages of life."
+    show attachment_theory 11
+    with dissolve
+    show attachment_theory 12
+    with dissolve
     attachment_n "The lack of a secure attachment during an individual's childhood can have a profound negative impact on an adult's interpersonal relationships and parenting ability, 
                   as well as the individual's contentment at work."
     
