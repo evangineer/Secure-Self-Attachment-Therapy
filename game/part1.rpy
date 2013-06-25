@@ -45,6 +45,19 @@ image attachment_theory 10 = "images/part1/attachment_theory/image_attachment_th
 image attachment_theory 11 = "images/part1/attachment_theory/image_attachment_theory_11.png"
 image attachment_theory 12 = "images/part1/attachment_theory/image_attachment_theory_12.png"
 
+image physical_brain 1 = "images/part1/physical_brain/image_physical_brain_1.png"
+image physical_brain 2 = "images/part1/physical_brain/image_physical_brain_2.png"
+image physical_brain 3 = "images/part1/physical_brain/image_physical_brain_3.png"
+image physical_brain 4 = "images/part1/physical_brain/image_physical_brain_4.png"
+image physical_brain 5 = "images/part1/physical_brain/image_physical_brain_5.png"
+image physical_brain 6 = "images/part1/physical_brain/image_physical_brain_6.png"
+image physical_brain 7 = "images/part1/physical_brain/image_physical_brain_7.png"
+image physical_brain 8 = "images/part1/physical_brain/image_physical_brain_8.png"
+image physical_brain 9 = "images/part1/physical_brain/image_physical_brain_9.png"
+image physical_brain 10 = "images/part1/physical_brain/image_physical_brain_10.png"
+image physical_brain 11 = "images/part1/physical_brain/image_physical_brain_11.png"
+image physical_brain 12 = "images/part1/physical_brain/image_physical_brain_12.png"
+
 init python:
     part1_menu_content = [
         ("introduction", "Introduction and Game Background"),
@@ -242,12 +255,43 @@ label attachment_theory:
         jump part1_menu
     
 label brain:
-    brain_n "'The Truine Brain' theory states that the brain is composed of 3 components. Each of these components represents the different levels of sophistication developed throughout evolution."
+    show physical_brain 1
+    with fade
+    with Pause(1.2)
+    show physical_brain 2
+    with fade
+    brain_n "'The Truine Brain' theory states that the brain is composed of 3 components."
+    show physical_brain 3
+    with dissolve
+    brain_n "Each of these components represents the different levels of sophistication developed throughout evolution."
+    show physical_brain 4
+    with dissolve
     brain_n "The first component is known as the 'Reptilian Brain', which is the most basic component and acts as the core of the brain."
-    brain_n "The Second component is known as the 'Limbic System', which processes emotions and memories."
+    show physical_brain 5
+    with dissolve
+    brain_n "The second component is known as the 'Limbic System', which processes emotions and memories."
+    show physical_brain 6
+    with dissolve
     brain_n "The third component is known as the 'Cerebral Cortex', which is responsible for reasoning and the overall consciousness of the individual."
-    brain_n "The cerebral cortex is further divided into four lobes. The frontal lobe is responsible with reasoning and attention. The temporal lobe is responsible with language, hearing and memories. 
-             The parietal lobe controls the body and movement and finally the occipital lobe deals with visual processing."
+    show physical_brain 7
+    with dissolve
+    show physical_brain 8
+    with dissolve
+    brain_n "The cerebral cortex is further divided into four lobes."
+    show physical_brain 9
+    with dissolve
+    brain_n "The frontal lobe is responsible with reasoning and attention.occipital lobe deals with visual processing."
+    show physical_brain 10
+    with dissolve
+    brain_n "The occipital lobe deals with visual processing."
+    show physical_brain 11
+    with dissolve
+    brain_n "The parietal lobe controls the body and movement."
+    show physical_brain 12
+    with dissolve
+    brain_n "Finally the temporal lobe is responsible with language, hearing and memories."
+    show physical_brain 5
+    with dissolve
     brain_n "The limbic system contains the amygdala, which deals with emotional understanding and fear. It also contains the hippocampus, which is associated with the modulation of memory and emotion."
     brain_n "Although a generalization, some functions in the brain are lateralized meaning that they are predominantly processed in either the right or left side of the brain."
     brain_n "In simplified terms, the left side of the brain is responsible for logic and language and the right side of the brain is responsible for creativity and emotion."
