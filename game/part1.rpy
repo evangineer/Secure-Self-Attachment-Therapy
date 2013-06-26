@@ -57,6 +57,42 @@ image physical_brain 9 = "images/part1/physical_brain/image_physical_brain_9.png
 image physical_brain 10 = "images/part1/physical_brain/image_physical_brain_10.png"
 image physical_brain 11 = "images/part1/physical_brain/image_physical_brain_11.png"
 image physical_brain 12 = "images/part1/physical_brain/image_physical_brain_12.png"
+image physical_brain 13 = "images/part1/physical_brain/image_physical_brain_13.png"
+image physical_brain 14 = "images/part1/physical_brain/image_physical_brain_14.png"
+image physical_brain 15 = "images/part1/physical_brain/image_physical_brain_15.png"
+image physical_brain 16 = "images/part1/physical_brain/image_physical_brain_16.png"
+image physical_brain 17 = "images/part1/physical_brain/image_physical_brain_17.png"
+image physical_brain 18 = "images/part1/physical_brain/image_physical_brain_18.png"
+image physical_brain 19 = "images/part1/physical_brain/image_physical_brain_19.png"
+image physical_brain 20 = "images/part1/physical_brain/image_physical_brain_20.png"
+image physical_brain 21 = "images/part1/physical_brain/image_physical_brain_21.png"
+
+image attachment_therapy 1 = "images/part1/attachment_therapy/image_attachment_therapy_1.png"
+image attachment_therapy 2 = "images/part1/attachment_therapy/image_attachment_therapy_2.png"
+image attachment_therapy 3 = "images/part1/attachment_therapy/image_attachment_therapy_3.png"
+image attachment_therapy 4 = "images/part1/attachment_therapy/image_attachment_therapy_4.png"
+image attachment_therapy 5 = "images/part1/attachment_therapy/image_attachment_therapy_5.png"
+image attachment_therapy 6 = "images/part1/attachment_therapy/image_attachment_therapy_6.png"
+image attachment_therapy 7 = "images/part1/attachment_therapy/image_attachment_therapy_7.png"
+image attachment_therapy 8 = "images/part1/attachment_therapy/image_attachment_therapy_8.png"
+image attachment_therapy 9 = "images/part1/attachment_therapy/image_attachment_therapy_9.png"
+image attachment_therapy 10 = "images/part1/attachment_therapy/image_attachment_therapy_10.png"
+
+image bond_formation 1 = "images/part1/bond_formation/image_bond_formation_1.png"
+image bond_formation 2 = "images/part1/bond_formation/image_bond_formation_2.png"
+
+image bond_strengthening 1 = "images/part1/bond_strengthening/image_bond_strengthening_1.png"
+image bond_strengthening 2 = "images/part1/bond_strengthening/image_bond_strengthening_2.png"
+image bond_strengthening 3 = "images/part1/bond_strengthening/image_bond_strengthening_3.png"
+image bond_strengthening 4 = "images/part1/bond_strengthening/image_bond_strengthening_4.png"
+image bond_strengthening 5 = "images/part1/bond_strengthening/image_bond_strengthening_5.png"
+
+image protocols 1 = "images/part1/protocols/image_protocols_1.png"
+image protocols 2 = "images/part1/protocols/image_protocols_2.png"
+image protocols 3 = "images/part1/protocols/image_protocols_3.png"
+image protocols 4 = "images/part1/protocols/image_protocols_4.png"
+
+image part1_ending = "images/part1/menu/image_part1_end.png"
 
 init python:
     part1_menu_content = [
@@ -64,9 +100,9 @@ init python:
         ("attachment_theory", "Attachment Theory"),
         ("brain", "Physical Brain"),
         ("attachment_therapy", "Secure Self-Attachment Therapy"),
-        ("forming_connection", "Forming Inner Child Bond"),
-        ("strengthen_connection", "Strengthen Inner Child Bond"),
-        ("protocol", "Game Exercises")
+        ("forming_connection", "Inner Child Bond Formation"),
+        ("strengthen_connection", "Bond Strengthening"),
+        ("protocol", "Protocols")
         ]
 
 screen part1_menu_layout:
@@ -92,11 +128,13 @@ screen part1_menu_layout:
                     action Jump(label='transition')
                     
 label part1_menu:
+    scene part1_ending
+    with fade
     call screen part1_menu_layout()
     call expression _return
 
 label introduction:
-    show introduction 1
+    scene introduction 1
     with fade
     
     if globalvariables.first_time == True:
@@ -162,7 +200,7 @@ label introduction:
         jump game_background
      
 label game_background:
-    show game_background 1
+    scene game_background 1
     with fade
     game_background_n "This game is designed to help you feel better and teach you important tools and exercises to help you cope with any negative emotions. 
                        It is based on the principles of Secure Self-Attachment Therapy."
@@ -212,7 +250,7 @@ label game_background:
         jump part1_menu
         
 label attachment_theory:
-    show attachment_theory 1
+    scene attachment_theory 1
     with fade
     attachment_n "Attachment theory is a psychological model developed by John Bowlby and Mary Ainsworth. 
                   It is the study of bonds between people and their lasting impacts on psychological well being."
@@ -255,7 +293,7 @@ label attachment_theory:
         jump part1_menu
     
 label brain:
-    show physical_brain 1
+    scene physical_brain 1
     with fade
     with Pause(1.2)
     show physical_brain 2
@@ -293,25 +331,65 @@ label brain:
     show physical_brain 5
     with dissolve
     brain_n "The limbic system contains the amygdala, which deals with emotional understanding and fear. It also contains the hippocampus, which is associated with the modulation of memory and emotion."
+    show physical_brain 13
+    with fade
     brain_n "Although a generalization, some functions in the brain are lateralized meaning that they are predominantly processed in either the right or left side of the brain."
-    brain_n "In simplified terms, the left side of the brain is responsible for logic and language and the right side of the brain is responsible for creativity and emotion."
+    show physical_brain 14
+    with dissolve
+    show physical_brain 15
+    with dissolve
+    show physical_brain 16
+    with dissolve
+    brain_n "In simplified terms, the left side of the brain is responsible for logic and language"
+    show physical_brain 17
+    with dissolve
+    show physical_brain 18
+    with dissolve
+    show physical_brain 19
+    with dissolve
+    brain_n "and the right side of the brain is responsible for creativity and emotion."
+    show physical_brain 20
+    with fade
     brain_n "The integration and communication between the two sides or hemispheres of the brain is essential in therapy. The reason is that the cerebral cortex has many connections to the hippocampus, amygdala and other limbic system structures."
     brain_n "Many psychological disorders, including depression and anxiety are associated with a lower efficiently in the communication between the brain's two hemispheres."
+    show physical_brain 21
+    with dissolve
     brain_n "Secure Self-Attachment Therapy focuses on these neuron connections and seeks to form and reinforce healthy and efficient connections."
     
     if globalvariables.first_time == True:
-        brain_n "To understand the workings of the therapy, we must first start from understanding the structure of our physical brain."
+        brain_n "Now let's move on to the principles behind the Secure Self-Attachment Therapy."
         jump attachment_therapy
     else:
         jump part1_menu
         
 label attachment_therapy:
-    attachment_therapy_n "Secure Self-Attachment Therapy is a new technique developed to treat individuals suffering from problems rooting from unhealthy attachment developed during infancy. 
-                          It aims to form and strengthen an attachment link that mirrors the relationship between a caregiver and a child internally."
-    attachment_therapy_n "The therapy seeks to form the missing or weak neural connections between the left and right hand side of the subject's brain. 
-                          During the therapy and through normal healthy attachment, the active right hand side of the brain will seek to establish a connection or attachment with the left hand side of the brain."
+    scene attachment_therapy 1
+    with fade
+    with Pause(0.5)
+    show attachment_therapy 2
+    with dissolve
+    with Pause(1.2)
+    show attachment_therapy 3
+    with fade
+    attachment_therapy_n "Secure Self-Attachment Therapy is a new technique developed to treat individuals suffering from problems rooting from unhealthy attachment developed during infancy."
+    show attachment_therapy 4
+    with dissolve
+    attachment_therapy_n "It aims to form and strengthen an attachment link that mirrors the relationship between a caregiver and a child internally."
+    attachment_therapy_n "The therapy seeks to form the missing or weak neural connections between the left and right hand side of the subject's brain."
+    show attachment_therapy 5
+    with fade
+    attachment_therapy_n "During the therapy and through normal healthy attachment, the active right hand side of the brain will seek to establish a connection or attachment with the left hand side of the brain."
+    show attachment_therapy 6
+    with dissolve
     attachment_therapy_n "The metaphor that is commonly used to describe this therapy is that the right hand side of the brain takes the role of the adult caregiver and the right hand side of the brain takes the role of the individual's inner child."
+    show attachment_therapy 7
+    with fade
+    show attachment_therapy 8
+    with dissolve
     attachment_therapy_n "Through mental process, the neural patterns that represent a healthy attachment can be formed and gradually strengthened."
+    show attachment_therapy 9
+    with fade
+    attachment_therapy_n "This would effectively heal the user and the healthy neural connections would eventually overshadow the unhealthy ones."
     
     if globalvariables.first_time == True:
         attachment_therapy_n "Secure Self-Attachment Therapy is composes of 3 critical processes. It is important that we understand these processes before starting this game. The first process of the therapy is to form a connection between the 'adult' and the 'inner child'."
@@ -320,6 +398,13 @@ label attachment_therapy:
         jump part1_menu
 
 label forming_connection:
+    scene attachment_therapy 10
+    with fade
+    with Pause(1.2)
+    show bond_formation 1
+    with fade
+    show bond_formation 2
+    with dissolve
     forming_connection_n "Forming a compassionate and devoted bond with your inner child is a crucial process in this therapy. 
                           The neural connections associated to falling in love with or caring deeply for another person, in this case your inner child, must be established as this is where the basis of the therapy stems from."
     forming_connection_n "In this game, a profile of a child is built. This child is a representation of you as a child. Through this profile, you should build a strong sense of your childhood as well as concentrating on how lovable this child is."
@@ -333,11 +418,27 @@ label forming_connection:
         jump part1_menu
         
 label strengthen_connection:
+    scene attachment_therapy 10
+    with fade
+    with Pause(1.2)
+    show bond_strengthening 1
+    with fade
     strengthen_connection_n "It is important that once an emotional bond for your inner child is formed, that this neural connection is strengthened. 
                              Once these healthy attachment connections are strengthened enough, the previous neural connections relating to unhealthy insecure attachment can be overshadowed."
     strengthen_connection_n "In this game, there are 2 tools that are repeatedly used to aid the process of the therapy."
+    show bond_strengthening 2
     strengthen_connection_n "The first tool is the use of affirmations. It is important that you choose affirmations that you identify yourself with and to memorize and recite them."
+    show bond_strengthening 3
+    with dissolve
+    with Pause(1.2)
+    show bond_strengthening 1
+    with fade
+    with Pause(1.2)
+    show bond_strengthening 4
+    with dissolve
     strengthen_connection_n "The second tool is the use of music. You should try to pick songs of particular resonance to your childhood or songs that make you feel positive."
+    show bond_strengthening 5
+    with dissolve
     strengthen_connection_n "This game will allow you to learn the lyrics to allow you to recite and sing the songs with ease, especially during times of stress or while being overwhelmed with negative emotions. 
                              The aim of listening to or singing these songs is to remind you of the strong commitment you have made with your inner child."
     strengthen_connection_n "You should make a conscious effort to associate the affirmations and songs with your bond with your inner child."
@@ -349,9 +450,21 @@ label strengthen_connection:
         jump part1_menu
         
 label protocol:
+    scene attachment_therapy 10
+    with fade
+    with Pause(1.2)
+    show protocols 1
+    with fade
+    show protocols 2
+    with dissolve
     protocol_n "Secure Self-Attachment Therapy involves protocols and exercises that seek to enforce positive emotions and to further strengthen the bond between you and your inner child."
     protocol_n "The protocols are either instructional or requires interaction from you. 
                 These protocols are based on Game Theory and designed so that your progress can be recorded, analyzed and structured to best cater the individual playing the game."
+    show protocols 3
+    with dissolve
+    with Pause(0.5)
+    show protocols 4
+    with dissolve
     protocol_n "Through repetitions of these protocols,  the neural connections relating to healthy attachment can be reinforced and help to overshadow the insecure attachment connections."
     
     if globalvariables.first_time == True:
@@ -360,6 +473,8 @@ label protocol:
         jump part1_menu
     
 label transition:
+    scene part1_ending
+    with fade
     menu:
         "Hopefully you will now have a good understanding of the workings and structure of this game as well as the scientific principles behind it. Would you like to go through any of the topics again?"
         "Yes":
