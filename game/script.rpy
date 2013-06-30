@@ -12,6 +12,6 @@ label start:
     if globalvariables.first_time == True:
         jump introduction
     else:
-        jump part1_menu
+        jump part2_menu
 
     return

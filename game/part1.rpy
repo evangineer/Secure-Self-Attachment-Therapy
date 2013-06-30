@@ -106,7 +106,6 @@ init python:
         ]
 
 screen part1_menu_layout:
-
     side "c r":
         area (256,150,512,350)
         viewport:
@@ -124,9 +123,14 @@ screen part1_menu_layout:
                 
                 textbutton "Back":
                     xfill True
-                    #action Quit(confirm=True)
-                    action Jump(label='transition')
+                    action Jump(label='part1_menu_back')
                     
+label part1_menu_back:
+    if globalvariables.first_time == True:
+        jump transistion
+    else:
+        jump part2_menu
+
 label part1_menu:
     scene part1_ending
     with fade
@@ -318,7 +322,7 @@ label brain:
     brain_n "The cerebral cortex is further divided into four lobes."
     show physical_brain 9
     with dissolve
-    brain_n "The frontal lobe is responsible with reasoning and attention.occipital lobe deals with visual processing."
+    brain_n "The frontal lobe is responsible with reasoning and attention."
     show physical_brain 10
     with dissolve
     brain_n "The occipital lobe deals with visual processing."
@@ -381,7 +385,7 @@ label attachment_therapy:
     attachment_therapy_n "During the therapy and through normal healthy attachment, the active right hand side of the brain will seek to establish a connection or attachment with the left hand side of the brain."
     show attachment_therapy 6
     with dissolve
-    attachment_therapy_n "The metaphor that is commonly used to describe this therapy is that the right hand side of the brain takes the role of the adult caregiver and the right hand side of the brain takes the role of the individual's inner child."
+    attachment_therapy_n "The metaphor that is commonly used to describe this therapy is that the left hand side of the brain takes the role of the adult caregiver and the right hand side of the brain takes the role of the individual's inner child."
     show attachment_therapy 7
     with fade
     show attachment_therapy 8
@@ -473,6 +477,7 @@ label protocol:
         jump part1_menu
     
 label transition:
+    $globalvariables.first_time = False
     scene part1_ending
     with fade
     menu:
@@ -481,7 +486,6 @@ label transition:
             jump part1_menu
             
         "No":
-            $globalvariables.first_time = False
             "Remember if you wish to revisit the introduction and background information, it can be accessed in the main menu."
             "Let's begin the game by creating your inner child profile"
         
