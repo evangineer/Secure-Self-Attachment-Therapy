@@ -1,4 +1,4 @@
-image part2_menu setup = "images/part2/image_part2_menu.png"
+image part2_menu setup = "images/part2/image_part2_menu_layout.png"
 
 screen part2_menu_layout:  
     imagemap:
@@ -31,7 +31,7 @@ screen part2_menu_layout:
         yminimum 39
         ymaximum 39
         
-        $ui.text("Caleb Chiu",color="#2a3d00ff",xalign=0.5)
+        $ui.text(globalvariables.name,color="#2a3d00ff",xalign=0.5)
         
     frame id "frame_affirmation": 
         xpos 328
@@ -60,8 +60,8 @@ screen part2_menu_layout:
             ypos 0
             child_size (None,5000)
             
-            $ui.text("15th June 1995",color="#ff0002",xpos=10,ypos=8)
-            $ui.text("Blah blah blah...",color="#2a3d00ff",xpos=10,ypos=48)
+            $ui.text("Age "+temp_age,color="#ff0002",xpos=10,ypos=8)
+            $ui.text(temp_entry,color="#2a3d00ff",xpos=10,ypos=48)
             
     frame id "frame_information":
         xpos 356
@@ -79,28 +79,55 @@ screen part2_menu_layout:
         textbutton _("Continue") action Return("continue")
         
 label part2_menu:
+    python:
+        temp_age,temp_entry = globalvariables.journal_entry[globalvariables.journal_current-1]
     scene part2_menu setup
     with fade
+    jump part2_menu_loop
+    
+label part2_menu_loop:
     call screen part2_menu_layout
     $result = _return
     
     #if result == "affirmation":
         
-    #elif result == "diary":
+    if result == "diary":
+        jump diary_start
         
     #elif result == "music":
         
     #elif result == "photo":
         
-    #elif result == "previous_page":
+    elif result == "previous_page":
+        if globalvariables.journal_current > 1:
+            jump previous_page
+        else:
+            jump part2_menu_loop
         
-    #elif result == "next_page":
+    elif result == "next_page":
+        if globalvariables.journal_current != globalvariables.journal_length:
+            jump next_page
+        else:
+            jump part2_menu_loop
     
-    if result == "information":
+    elif result == "information":
         jump part1_menu
         
     #elif result == "continue":
     
+label previous_page:
+    python:
+        globalvariables.journal_current = globalvariables.journal_current - 1
+        temp_age,temp_entry = globalvariables.journal_entry[globalvariables.journal_current-1]
+    jump part2_menu_loop
+        
+label next_page:
+    python:
+        globalvariables.journal_current = globalvariables.journal_current + 1
+        temp_age,temp_entry = globalvariables.journal_entry[globalvariables.journal_current-1]
+    jump part2_menu_loop
+
+        
         
     
 
