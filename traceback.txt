@@ -1,0 +1,22 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/part3.rpy", line 77, in script
+SyntaxError: invalid syntax (part3.rpy, line 83)
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "/Users/ZERO/Computing/Ren'Py/renpy/execution.py", line 288, in run
+    node.execute()
+  File "/Users/ZERO/Computing/Ren'Py/renpy/ast.py", line 1484, in execute
+    if renpy.python.py_eval(condition):
+  File "/Users/ZERO/Computing/Ren'Py/renpy/python.py", line 1331, in py_eval
+    return eval(py_compile(source, 'eval'), globals, locals)
+  File "/Users/ZERO/Computing/Ren'Py/renpy/python.py", line 450, in py_compile
+    raise e
+SyntaxError: invalid syntax (part3.rpy, line 83)
+
+Darwin-12.4.0-x86_64-i386-64bit
+Ren'Py 6.15.7.374
+Secure Self-Attachment Therapy 0.0

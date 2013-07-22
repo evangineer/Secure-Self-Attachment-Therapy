@@ -1,6 +1,6 @@
-Tue Jul  2 23:41:10 2013
+Thu Jul 18 17:09:03 2013
 Darwin-12.4.0-x86_64-i386-64bit
-Ren'Py 6.15.5.354
+Ren'Py 6.15.7.374
 Secure Self-Attachment Therapy 0.0
 
 
@@ -172,15 +172,12 @@ Texture testing:
 Performance test:
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
+- Frame drawn at 0.011000 seconds.
 - Frame drawn at 0.014000 seconds.
-- Frame drawn at 0.022000 seconds.
-- Frame drawn at 0.038000 seconds.
-- Frame drawn at 0.055000 seconds.
-- 0.055000 seconds to render 5 frames.
-
-Windowed mode.
-Screen sizes: virtual=(1024, 600) physical=(1024, 600)
-Deallocating textures.
+- Frame drawn at 0.030000 seconds.
+- Frame drawn at 0.047000 seconds.
+- 0.047000 seconds Deallocating texturesDeallocating textures.
 Done deallocating textures.
 About to quit GL.
 Finished quit GL.
+.

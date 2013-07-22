@@ -1,17 +1,19 @@
-﻿# You can place the script of your game in this file.
-
-# Declare images below this line, using the image statement.
-# eg. image eileen happy = "eileen_happy.png"
+﻿# This is the initial script the game runs when it is started. In this script, the
+# global variables are loaded and depending on the variables themselves, the corresponding
+# section of the game is loaded
 
 init python:
-        import globalvariables
+    from game_logic import GameLogic
 
 # The game starts here.
 label start:
-
-    if globalvariables.first_time == True:
+    call globalvariables
+    
+    # checks to see if it is the first time the game has been run for the user
+    if first_time == True:
         jump introduction
+    # if not the first time, load the user's profile page
     else:
         jump part2_menu
-
+        
     return

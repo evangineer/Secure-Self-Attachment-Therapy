@@ -1,3 +1,8 @@
+# Part 1 serves as an introduction and tutorial to the game. It is designed to inform the user
+# of the scientific background behind Secure Self Attachment Therapy in order to excite the 
+# cognitive side of the user
+
+# define all narrators in this scene
 define introduction_n = Character('Introduction', color="#c8ffc8")
 define game_background_n = Character('Game Background', color="#c8ffc8")
 define attachment_n = Character('Attachment Theory', color="#c8ffc8")
@@ -7,6 +12,7 @@ define forming_connection_n = Character('Forming Inner Child Bond', color="c8ffc
 define strengthen_connection_n = Character('Strenthening Inner Child Bond', color="c8ffc8")
 define protocol_n = Character('Attachment Exercises', color="c8ffc8")
 
+# load all images in this scene
 image introduction 1 = "images/part1/introduction/image_introduction_1.png"
 image introduction 2 = "images/part1/introduction/image_introduction_2.png"
 image introduction 3 = "images/part1/introduction/image_introduction_3.png"
@@ -94,6 +100,7 @@ image protocols 4 = "images/part1/protocols/image_protocols_4.png"
 
 image part1_ending = "images/part1/menu/image_part1_end.png"
 
+# set up menu button contents
 init python:
     part1_menu_content = [
         ("introduction", "Introduction and Game Background"),
@@ -105,6 +112,7 @@ init python:
         ("protocol", "Protocols")
         ]
 
+# set up Information page layout
 screen part1_menu_layout:
     side "c r":
         area (256,150,512,350)
@@ -124,24 +132,28 @@ screen part1_menu_layout:
                 textbutton "Back":
                     xfill True
                     action Jump(label='part1_menu_back')
-                    
+
+# determines the function of the back button
 label part1_menu_back:
-    if globalvariables.first_time == True:
+    if first_time == True:
         jump transistion
     else:
         jump part2_menu
 
+# sets up the Introduction menu and enables the functions of the menu
 label part1_menu:
     scene part1_ending
     with fade
     call screen part1_menu_layout()
+    # wait for user to select a button and call the corresponding label
     call expression _return
 
+# Slides for the introductino to the game
 label introduction:
     scene introduction 1
     with fade
     
-    if globalvariables.first_time == True:
+    if first_time == True:
         introduction_n "Welcome to the Secure-Self Attachment game!"
         
     introduction_n "The feelings of depression, anxiety and other mental disorders are unwanted and can be hard to bear at times.
@@ -202,7 +214,8 @@ label introduction:
         with dissolve
         introduction_n "Hence mental disorder is a global and serious problem facing humanity and this game seeks to provide an alternate method for treatment."
         jump game_background
-     
+
+# Slides is describe the game background
 label game_background:
     scene game_background 1
     with fade
@@ -247,12 +260,13 @@ label game_background:
     game_background_n "This is used as part of the scoring to determine how well you are progressing."
     game_background_n "So it is important to be honest!"
     
-    if globalvariables.first_time == True:
+    if first_time == True:
         game_background_n "Now lets begin with some background information regarding the therapy."
         jump attachment_theory
     else:
         jump part1_menu
-        
+
+# Slides to decribe attachment theory
 label attachment_theory:
     scene attachment_theory 1
     with fade
@@ -290,12 +304,13 @@ label attachment_theory:
     attachment_n "The lack of a secure attachment during an individual's childhood can have a profound negative impact on an adult's interpersonal relationships and parenting ability, 
                   as well as the individual's contentment at work."
     
-    if globalvariables.first_time == True:
+    if first_time == True:
         attachment_n "To understand the workings of the therapy, we must first start from understanding the structure of our physical brain."
         jump brain
     else:
         jump part1_menu
-    
+
+# Slides to describe the physical brain
 label brain:
     scene physical_brain 1
     with fade
@@ -360,12 +375,13 @@ label brain:
     with dissolve
     brain_n "Secure Self-Attachment Therapy focuses on these neuron connections and seeks to form and reinforce healthy and efficient connections."
     
-    if globalvariables.first_time == True:
+    if first_time == True:
         brain_n "Now let's move on to the principles behind the Secure Self-Attachment Therapy."
         jump attachment_therapy
     else:
         jump part1_menu
-        
+
+# Slides decribing Secure Self Attachment Therapy
 label attachment_therapy:
     scene attachment_therapy 1
     with fade
@@ -395,12 +411,13 @@ label attachment_therapy:
     with fade
     attachment_therapy_n "This would effectively heal the user and the healthy neural connections would eventually overshadow the unhealthy ones."
     
-    if globalvariables.first_time == True:
+    if first_time == True:
         attachment_therapy_n "Secure Self-Attachment Therapy is composes of 3 critical processes. It is important that we understand these processes before starting this game. The first process of the therapy is to form a connection between the 'adult' and the 'inner child'."
         jump forming_connection
     else:
         jump part1_menu
 
+# Slides describing the the first process of Secure Self-Attachment Therapy: Forming a connection with the inner child
 label forming_connection:
     scene attachment_therapy 10
     with fade
@@ -415,12 +432,13 @@ label forming_connection:
     forming_connection_n "Once ready, the game will prompt you to make a promise to care and look after this child. It is important that this promise is genuine so please do not rush this decision!"
     forming_connection_n "If you are unsure of this decision, it is suggested to spend more time with building your child's profile."
     
-    if globalvariables.first_time == True:
+    if first_time == True:
         forming_connection_n "The second process that is crutial to Secure Self-Attachment Therapy is to strengthen the connection and bond between you and your inner child."
         jump strengthen_connection
     else:
         jump part1_menu
-        
+
+# Slides describing the second process of Secure Self-Attachment Therapy: Strengthening the inner child connection
 label strengthen_connection:
     scene attachment_therapy 10
     with fade
@@ -447,12 +465,13 @@ label strengthen_connection:
                              The aim of listening to or singing these songs is to remind you of the strong commitment you have made with your inner child."
     strengthen_connection_n "You should make a conscious effort to associate the affirmations and songs with your bond with your inner child."
     
-    if globalvariables.first_time == True:
+    if first_time == True:
         strengthen_connection_n "The third and final process that is crutial to Secure Self-Attachment Therapy is to exercise with protocols that activate healthy attachment connections."
         jump protocol
     else:
         jump part1_menu
-        
+
+# Slides describing the third process of Secure Self-Attachment Therapy: Performing positive protocols
 label protocol:
     scene attachment_therapy 10
     with fade
@@ -471,13 +490,14 @@ label protocol:
     with dissolve
     protocol_n "Through repetitions of these protocols,  the neural connections relating to healthy attachment can be reinforced and help to overshadow the insecure attachment connections."
     
-    if globalvariables.first_time == True:
+    if first_time == True:
         jump transition
     else:
         jump part1_menu
-    
+
+# End of tutorial for first time users
 label transition:
-    $globalvariables.first_time = False
+    $first_time = False
     scene part1_ending
     with fade
     menu:
@@ -488,4 +508,5 @@ label transition:
         "No":
             "Remember if you wish to revisit the introduction and background information, it can be accessed in the main menu."
             "Let's begin the game by creating your inner child profile"
+            jump part2_menu
         
