@@ -1,21 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/part3.rpy", line 77, in script
-SyntaxError: invalid syntax (part3.rpy, line 83)
+  File "game/game_logic_test.rpy", line 50, in script
+  File "game/game_logic_test.rpy", line 53, in python
+NameError: global name 'false' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
   File "/Users/ZERO/Computing/Ren'Py/renpy/execution.py", line 288, in run
     node.execute()
-  File "/Users/ZERO/Computing/Ren'Py/renpy/ast.py", line 1484, in execute
-    if renpy.python.py_eval(condition):
-  File "/Users/ZERO/Computing/Ren'Py/renpy/python.py", line 1331, in py_eval
-    return eval(py_compile(source, 'eval'), globals, locals)
-  File "/Users/ZERO/Computing/Ren'Py/renpy/python.py", line 450, in py_compile
-    raise e
-SyntaxError: invalid syntax (part3.rpy, line 83)
+  File "/Users/ZERO/Computing/Ren'Py/renpy/ast.py", line 718, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/ZERO/Computing/Ren'Py/renpy/python.py", line 1297, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/game_logic_test.rpy", line 53, in <module>
+    if ai.check_win(choice[0], choice[1]):
+  File "intelligent_agent.py", line 275, in check_win
+  File "game_logic.py", line 83, in check_win
+NameError: global name 'false' is not defined
 
 Darwin-12.4.0-x86_64-i386-64bit
 Ren'Py 6.15.7.374

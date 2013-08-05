@@ -37,5 +37,8 @@ label globalvariables:
         
         if not hasattr(renpy.store, "logic"):
             logic = GameLogic()
+            
+        if not hasattr(renpy.store, "ai"):
+            ai = IntelligentAgent()
 
     return

@@ -4,6 +4,7 @@
 
 init python:
     from game_logic import GameLogic
+    from intelligent_agent import IntelligentAgent
 
 # The game starts here.
 label start:

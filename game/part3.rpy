@@ -73,7 +73,8 @@ label action_checker:
             "cool"
         "No":
             "dude"
-            
+    
+    # update game logic with action
     if (adult_attend and child_go):
         "attend and go"
         $logic.attend_go()
@@ -87,8 +88,13 @@ label action_checker:
         "ignore and don't go"
     
     # update the number of rounds of protocols the user has played
-    $logic.update_matrix()
     $rounds_played += 1
+    $logic.update_matrix()
+    
+    # checks if the user has won the round, where the action for (Attend, Go) is pareto optimal
+    if logic.check_win(adult_attend, child_go) and adult_attend:
+       "you Win!"
+    
     jump prompt
              
 label prompt:

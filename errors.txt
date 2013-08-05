@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/part3.rpy", line 87: is not terminated with a newline. (Check strings and parenthesis.)
-(Perhaps you left out a " at the end of the first line.)
-            "ignore and don't go
+File "game/game_logic_test.rpy", line 55: invalid syntax
+    if choice[0] == "attend"
+    
 
 Ren'Py Version: Ren'Py 6.15.7.374
