@@ -123,6 +123,12 @@ screen part2_menu_layout:
 
 # label to set up the part 2 profile layout
 label part2_menu:
+    $music_path = os.path.join(script_path, "Music/*")
+    $music_directory = glob.glob(music_path)
+    $music_count = len(music_directory)
+    $photo_path = os.path.join(script_path, "Photos/*")
+    $photo_directory = glob.glob(photo_path)
+    $photo_count = len(photo_directory)
     # load up selected diary entry
     python:
         temp_age,temp_entry = journal_entry[journal_current-1]

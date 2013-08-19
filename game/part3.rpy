@@ -52,7 +52,7 @@ label stress_checker:
     
     # update times stress level has been checked
     $stress_total += 1
-    jump protocol_start
+    jump game_status
 
 label action_checker:
     # set up booleans to determine selected action
@@ -103,6 +103,6 @@ label prompt:
     menu:
         prompt_n "Would you like to attempt another exercise?"
         "Yes":
-            jump protocol_start
+            jump game_status
         "No":
             jump part2_menu

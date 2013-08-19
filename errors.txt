@@ -2,12 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/affirmation.rpy", line 40: keyword argument u'scrollbars' appears more than once in a viewport statement.
-    scrollbars "horizontal"
-              ^
-
-File "game/affirmation_default.rpy", line 38: keyword argument u'scrollbars' appears more than once in a viewport statement.
-    scrollbars "horizontal"
-              ^
+File "game/user_data_input.rpy", line 57: is not terminated with a newline. (Check strings and parenthesis.)
+        $explaination = becks_inventory_functions.depression_score_meaning(beck_depression_score[-1]
 
 Ren'Py Version: Ren'Py 6.15.7.374

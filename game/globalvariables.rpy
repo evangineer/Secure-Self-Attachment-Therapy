@@ -85,6 +85,9 @@ label globalvariables:
         if not hasattr(renpy.store, "photo_title"):
             photo_title = {}
             
+        if not hasattr(renpy.store, "photo_detail"):
+            photo_detail = {}
+            
         # Music Variables
         
         if not hasattr(renpy.store, "music_count"):
@@ -103,17 +106,15 @@ label globalvariables:
             music_lyrics = {}
 
         # Part 3 Variables
-
+        
+        if not hasattr(renpy.store, "exercise_mode"):
+            exercise_mode = False 
+            
+        if not hasattr(renpy.store, "exercise_memory"):
+            exercise_memory = None 
+            
         if not hasattr(renpy.store, "rounds_played"):
             rounds_played = 0
-
-        # Stress Checker Variables
-
-        if not hasattr(renpy.store, "stress"):
-            stress = []
-            
-        if not hasattr(renpy.store, "stress_total"):
-            stress_total = 0
             
         # Game Logic Variables
         

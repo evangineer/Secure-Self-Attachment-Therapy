@@ -166,7 +166,7 @@ label add_lyrics:
     
 label change_music_title:
     scene blank page
-    $music_title[music_directory[selected_music]] = renpy.input("What title would you like to give this photo?",length=60)
+    $music_title[music_directory[selected_music]] = renpy.input("What title would you like to give this song?",length=60)
     jump music_loop
     
 label play_song:

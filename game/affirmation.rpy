@@ -228,7 +228,11 @@ label custom_affirmation:
         "Self-Esteem":
             $self_esteem_affirmation.append(affirmation)
             $selected_genre = "Self-Esteem"
-    jump affirmation_loop
+    if exercise_mode == True:
+        $exercise_memory = affirmation
+        return
+    else:
+        jump affirmation_loop
 
         
 

@@ -144,7 +144,10 @@ label default_affirmation_loop:
     $result = _return
     
     if result == "_back":
-        jump affirmation_loop
+        if exercise_mode == True:
+            jump add_affirmation
+        else:
+            jump affirmation_loop
         
     elif result == "_all_affirmations":
         $default_selected_genre = "All"
@@ -172,10 +175,14 @@ label default_affirmation_loop:
         jump default_affirmation_loop
     
     elif result == "_add":
-        jump default_add_affirmation
+        if exercise_mode == True:
+            return
+        else:
+            jump default_add_affirmation
     
     else:
         $default_selected_affirmation = result
+        $exercise_memory = result
         jump default_affirmation_loop
     
 label default_add_affirmation:

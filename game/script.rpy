@@ -7,6 +7,7 @@ init python:
     from intelligent_agent import IntelligentAgent
     from intelligent_agent_2 import IntelligentAgent2
     import affirmation_load
+    import becks_inventory_functions
     import random
     import glob
     import os
@@ -14,6 +15,7 @@ init python:
 # The game starts here.
 label start:
     call globalvariables
+    call user_data
     
     # checks to see if it is the first time the game has been run for the user
     if first_time == True:
