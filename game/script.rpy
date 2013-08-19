@@ -5,6 +5,11 @@
 init python:
     from game_logic import GameLogic
     from intelligent_agent import IntelligentAgent
+    from intelligent_agent_2 import IntelligentAgent2
+    import affirmation_load
+    import random
+    import glob
+    import os
 
 # The game starts here.
 label start:

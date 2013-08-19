@@ -15,7 +15,7 @@ define prompt_n = Character('Review', color="#c8ffc8")
 # load all images used in this scene
 image blank page = "images/test/image_blank.png"
 
-# Introduction to section 3 of the game
+# Introduction to section 3 of the game 
 label part3_intro:
     scene blank page
     with fade
@@ -37,6 +37,8 @@ label part3_intro:
 label stress_checker:
     menu:
         stress_n "On a scale of one to five, how stressed are you currently feeling?"
+        "No Stress":
+            $stress.append(0)
         "1":
             $stress.append(1)
         "2":

@@ -1,4 +1,5 @@
-# This script contains the Intelligent Agent used in the game to guide the user. It uses the GameLogic class and uses
+# This script contains the Intelligent Agent used in the game to guide the user. 
+# It is based of David Cittern's intelligent agent. It uses the GameLogic class and uses
 # MDP, Q-learning algoritm and Ordinal Matrices to imitate the player.
 
 # Q-learning equation: Q(s,a)' <- Q(s,a) + l*[R(s,s') + d*max[Q(s',a')] - Q(s,a)] 
@@ -184,10 +185,12 @@ class IntelligentAgent(store.object):
         # find the action choice of the inner child given an adult's action choice    
         child = self.child_move(adult)
         
+        # find which action was chosen and update the specific Q value and probability matrix
         if adult == "attend" and child == "go":
             self.ai_logic.attend_go()
             self.ai_logic.update_matrix()
             self.update_ord_matrix()
+            # checks if the action caused a change in the ordinal matrix
             if self.ord_matrix_change():
                 self.change += 1
                 self.reset_learning_rate()

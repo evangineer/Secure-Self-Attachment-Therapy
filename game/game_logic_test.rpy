@@ -131,4 +131,111 @@ screen ai_test_setup:
             if (flag == True):
                 hbox spacing 10:
                     textbutton _("WIN!") 
+                    
+label ai2_test:
+    scene blank page
+    python:
+        flag = False
+        choice = ai2.move()
+        p = 0
+        c = 0
+        if choice[0] == "attend":
+            p = 1
+        if choice[1] == "go":
+            c = 1
+        if ai2.check_win(p, c) and p:
+            flag = True
+    call screen ai2_test_setup
+    $result = _return
+    
+    if(result == "round"):
+        jump ai2_test
+    
+screen ai2_test_setup:
+    hbox xalign 0.5 yalign 0.5 spacing 50:
+        vbox spacing 50:
+            hbox spacing 10:
+                textbutton _("AI") action Return("round")
+            
+            hbox spacing 10:
+                textbutton _("Rounds: " + str(ai2.get_round())) 
+
+        vbox spacing 50:   
+            hbox spacing 10:
+                textbutton _("t: " + str(round(ai2.ai_logic.t[0],2)) + " | " + str(round(ai2.ai_logic.t[1],2)))
+    
+            hbox spacing 10:
+                textbutton _("u: " + str(round(ai2.ai_logic.u[0],2)) + " | " + str(round(ai2.ai_logic.u[1],2)))
+        
+            hbox spacing 10:
+                textbutton _("v: " + str(round(ai2.ai_logic.v[0],2)) + " | " + str(round(ai2.ai_logic.v[1],2)))
+                
+            hbox spacing 10:
+                textbutton _("w: " + str(round(ai2.ai_logic.w[0],2)) + " | " + str(round(ai2.ai_logic.w[1],2)))
+                
+        vbox spacing 50:   
+            hbox spacing 10:
+                textbutton _("p_t: " + str(round(ai2.p_probability_matrix[0],2)))
+    
+            hbox spacing 10:
+                textbutton _("p_u: " + str(round(ai2.p_probability_matrix[1],2)))
+        
+            hbox spacing 10:
+                textbutton _("p_v: " + str(round(ai2.p_probability_matrix[2],2)))
+                
+            hbox spacing 10:
+                textbutton _("p_w: " + str(round(ai2.p_probability_matrix[3],2)))
+            
+        vbox spacing 50:   
+            hbox spacing 10:
+                textbutton _("p_o: " + str(round(ai2.c_probability_matrix[0],2)))
+    
+            hbox spacing 10:
+                textbutton _("p_p: " + str(round(ai2.c_probability_matrix[1],2)))
+        
+            hbox spacing 10:
+                textbutton _("p_q: " + str(round(ai2.c_probability_matrix[2],2)))
+                
+            hbox spacing 10:
+                textbutton _("p_y: " + str(round(ai2.c_probability_matrix[3],2)))
+                
+        vbox spacing 50:   
+            hbox spacing 10:
+                textbutton _("c_t: " + str(ai2.t_count)) 
+    
+            hbox spacing 10:
+                textbutton _("c_u: " + str(ai2.u_count))
+                
+            hbox spacing 10:
+                textbutton _("c_v: " + str(ai2.v_count)) 
+    
+            hbox spacing 10:
+                textbutton _("c_w: " + str(ai2.w_count)) 
+           
+            hbox spacing 10:
+                textbutton _("p_OC: " + str(ai2.p_change))
+            
+            if (flag == True):
+                hbox spacing 10:
+                    textbutton _("WIN!") 
+                    
+        vbox spacing 50:   
+            hbox spacing 10:
+                textbutton _("c_o: " + str(ai2.o_count)) 
+    
+            hbox spacing 10:
+                textbutton _("c_p: " + str(ai2.p_count))
+                
+            hbox spacing 10:
+                textbutton _("c_q: " + str(ai2.q_count)) 
+    
+            hbox spacing 10:
+                textbutton _("c_y: " + str(ai2.y_count)) 
+                
+            hbox spacing 10:
+                textbutton _("c_OC: " + str(ai2.c_change))
+            
+            if (flag == True):
+                hbox spacing 10:
+                    textbutton _("WIN!") 
         

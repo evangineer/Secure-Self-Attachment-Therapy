@@ -2,8 +2,12 @@
 errors listed below, and try again.
 
 
-File "game/game_logic_test.rpy", line 55: invalid syntax
-    if choice[0] == "attend"
-    
+File "game/affirmation.rpy", line 40: keyword argument u'scrollbars' appears more than once in a viewport statement.
+    scrollbars "horizontal"
+              ^
+
+File "game/affirmation_default.rpy", line 38: keyword argument u'scrollbars' appears more than once in a viewport statement.
+    scrollbars "horizontal"
+              ^
 
 Ren'Py Version: Ren'Py 6.15.7.374

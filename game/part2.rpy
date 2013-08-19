@@ -30,8 +30,11 @@ screen part2_menu_layout:
         yminimum 285
         ymaximum 285
         
-        # scale image to fit the frame
-        $ui.image(im.Scale("images/part2/image_part2_profile.png",273,273))
+        if profile_set == False:
+            # scale image to fit the frame
+            $ui.image(im.Scale("images/part2/image_part2_profile.png",273,273))
+        else:
+            $ui.image(im.Scale(profile_picture,273,273))
     
     # create text box for the name of the user
     frame id "frame_name":
@@ -53,7 +56,27 @@ screen part2_menu_layout:
         yminimum 39
         ymaximum 39
         
-        $ui.text("I love myself!",color="#2a3d00ff",xalign=0.5)
+        $chance = random.random()
+        $affirmation = None
+        if chance <= 0.25:
+            $count = len(general_affirmation)
+            if count != 0:
+                $affirmation = general_affirmation[random.randint(0,count-1)]
+        if chance > 0.25 and chance <= 0.5:
+            $count = len(anxiety_affirmation)
+            if count != 0:
+                $affirmation = anxiety_affirmation[random.randint(0,count-1)]
+        if chance > 0.5 and chance <= 0.75:
+            $count = len(stress_affirmation)
+            if count != 0:
+                $affirmation = stress_affirmation[random.randint(0,count-1)]
+        if chance > 0.75 and chance <= 1:
+            $count = len(self_esteem_affirmation)
+            if count != 0:
+                $affirmation = self_esteem_affirmation[random.randint(0,count-1)]
+
+        if affirmation != None:
+            $ui.text(affirmation,color="#2a3d00ff",xalign=0.5)
     
     # create scrollable frame to contain the selected diary entry
     frame id "frame_diary_entry":
@@ -114,15 +137,20 @@ label part2_menu_loop:
     # actions by users stored in result
     $result = _return
     
-    #if result == "affirmation":
+    if result == "affirmation":
+        $selected_affirmation = None
+        $selected_genre = "All"
+        jump affirmation_start
     
-    if result == "diary":
+    elif result == "diary":
         # diary page is loaded
         jump diary_start
         
-    #elif result == "music":
+    elif result == "music":
+        jump music_start
         
-    #elif result == "photo":
+    elif result == "photo":
+        jump photo_album_start
         
     elif result == "previous_page":
         # checks and excecutes if a previous diary entry is available
@@ -142,7 +170,7 @@ label part2_menu_loop:
     
     elif result == "information":
         # jump part1_menu
-        jump game_test
+        jump part1_menu
         
     elif result == "continue":
         # jump game_test
