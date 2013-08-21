@@ -8,6 +8,7 @@ define affirmation_n = Character('Affirmation', color="c8ffc8")
 # import images used in this scene
 image affirmation load = "images/part2/affirmation/image_affirmation_layout.png"
 image affirmation loaded = "images/part2/affitmation/image_affirmation_setup.png"
+image affirmation general = "images/part2/affirmation/image_affirmation.png"
 
 screen affirmation_menu_layout:
     
@@ -211,9 +212,11 @@ label add_affirmation:
             jump custom_affirmation
     
 label custom_affirmation:
-    scene blank page
+    scene affirmation general
     with fade
     $affirmation = renpy.input("Please enter your custom affirmation:",length=60)
+    scene blank page
+    with dissolve
     menu:
         "Please select the genre of your custom affirmation"
         "General":

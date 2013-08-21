@@ -7,6 +7,10 @@ define inventory_result = Character('Results', color="#c8ffc8")
 define becks_depression_n = Character("Beck's Depression Inventory", color="#c8ffc8")
 define becks_anxiety_n = Character("Beck's Anxiety Inventory", color="#c8ffc8")
 
+# defina all images used in this scene
+image beck depression = "images/part3/beck_inventory/image_part3_beck_depression.png"
+image beck anxiety = "images/part3/beck_inventory/image_part3_beck_anxiety.png"
+
 label user_data_input:
     $exercise_count = 2
     $choice = random.randint(1,exercise_count)
@@ -16,10 +20,12 @@ label user_data_input:
         jump becks_anxiety_inventory
         
 label becks_depression_inventory:
-    scene blank page
+    scene beck depression
+    with dissolve
     becks_depression_n "The following questions are made to determine the level of depression that you are currently feeling. It reults will be shown when all 21 questions
                         are answered. Please answer all the questions truthfully to allow it to better assess you current state."
-
+    scene blank page
+    with dissolve
     call becks_depression_questions
     call becks_depression_questions
     call becks_depression_questions
@@ -31,7 +37,7 @@ label becks_depression_inventory:
         $beck_depression_question_count = 0
         jump becks_depression_result
     else:
-        jump prompt
+        jump game_status_menu
         
 label becks_depression_questions:
     $answer_1 = beck_depression_question[beck_depression_question_count][0]
@@ -58,13 +64,15 @@ label becks_depression_result:
     inventory_result "Thank you for answering all the questions, your total score for the Beck's Depression Inventory is "
     inventory_result "%(score)d"
     inventory_result "%(explaination)s"
-    jump prompt
+    jump game_status_menu
     
 label becks_anxiety_inventory:
-    scene blank page
+    scene beck anxiety
+    with dissolve
     becks_anxiety_n "The following questions are made to determine the level of anxiety that you are currently feeling. It reults will be shown when all 21 questions
                      are answered. Please answer all the questions truthfully to allow it to better assess you current state."
-
+    scene blank page
+    with dissolve
     call becks_anxiety_questions
     call becks_anxiety_questions
     call becks_anxiety_questions
@@ -76,7 +84,7 @@ label becks_anxiety_inventory:
         $beck_anxiety_question_count = 0
         jump becks_anxiety_result
     else:
-        jump prompt
+        jump game_status_menu
         
 label becks_anxiety_questions:
     $answer_1 = beck_anxiety_response[0]
@@ -106,7 +114,7 @@ label becks_anxiety_result:
     inventory_result "Thank you for answering all the questions, your total score for the Beck's Anxiety Inventory is "
     inventory_result "%(score)d"
     inventory_result "%(explaination)s"
-    jump prompt        
+    jump game_status_menu        
         
         
     

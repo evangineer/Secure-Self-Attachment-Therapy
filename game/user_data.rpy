@@ -3,6 +3,16 @@
 
 label user_data:
     python:
+        # Score Variables
+        
+        if not hasattr(renpy.store, "score_history"):
+            score_history = []
+            
+        if not hasattr(renpy.store, "stress"):
+            score_count = 0
+            
+        if not hasattr(renpy.store, "stress"):
+            score = []
 
         # Stress Checker Variables
 

@@ -8,6 +8,7 @@ define diary_n = Character('Diary Entry', color="c8ffc8")
 image diary setup = "images/part2/diary/image_diary_entry_setup.png"
 image diary loaded = "images/part2/diary/image_diary_entry.png"
 image diary start = "images/part2/diary/image_diary_start.png"
+image diary general = "images/part2/diary/image_diary.png"
 
 init python:
     age = None
@@ -15,7 +16,7 @@ init python:
 
 # pre-diary input setup, prompts user for information regarding their story
 label diary_start:
-    scene diary start
+    scene diary general
     with fade
     
     # prompts user for age when the story took place. Repeats if the input age is invalid
@@ -57,15 +58,10 @@ screen diary_layout:
             
             # allows user to input their story
             $ui.input(color="#2a3d00ff")
-
-    frame id "change_date":
-        xpos 23
-        ypos 165
-        textbutton _("Change Age") action Return("_change_age")
         
     frame id "back":
         xpos 23
-        ypos 228
+        ypos 165
         textbutton _("Back") action Return("_back")
 
 # The following label is called when the diary button is pressed. It contains the functions
@@ -82,10 +78,6 @@ label diary_entry:
     # return to profile page if back is pressed
     if entry == "_back":
         jump part2_menu
-    
-    # return to pre-diary input setup
-    elif entry == "_change_age":
-        jump diary_start
     
     # if story was inputted, update global variables and return
     else:

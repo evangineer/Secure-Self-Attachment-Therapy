@@ -7,6 +7,7 @@ define music_n = Character('Music Collection', color="c8ffc8")
 
 # import images used in this scene
 image music setup = "images/part2/music/image_music_setup_layout.png"
+image music general = "images/part2/music/image_music.png"
 
 # set up music menu layout
 screen music_menu_layout:
@@ -160,12 +161,14 @@ label previous_song:
     jump music_loop
     
 label add_lyrics:
-    scene blank page
+    scene music general
+    with fade
     $music_lyrics[music_directory[selected_music]] = renpy.input("What are the lyrics to this song?",length=9999)
     jump music_loop
     
 label change_music_title:
-    scene blank page
+    scene music general
+    with fade
     $music_title[music_directory[selected_music]] = renpy.input("What title would you like to give this song?",length=60)
     jump music_loop
     

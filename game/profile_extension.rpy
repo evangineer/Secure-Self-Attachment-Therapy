@@ -9,7 +9,16 @@ define affirmation_builder_n = Character('Affirmation Builder', color="c8ffc8")
 define journal_entry_n = Character('Journal Entry', color="c8ffc8")
 define music_recollection_n = Character('Music Recollection', color="c8ffc8")
 
+# define all the images used in this scene
+image part3 profile_extension = "images/part3/profile_extension/image_part3_profile_extension.png"
+image profile photo_description = "images/part3/profile_extension/image_profile_photo_description.png"
+image profile affirmation_builder = "images/part3/profile_extension/image_profile_affirmation_builder.png"
+image profile journal_entry = "images/part3/profile_extension/image_profile_journal_entry.png"
+image profile music_recollection = "images/part3/profile_extension/image_profile_music_recollection.png"
+
 label profile_extension:
+    scene part3 profile_extension
+    with fade
     profile_extension_n "Profile Extension Exercises aim to build and strengthen the bonds that
                          you have with your inner child. Please follow the instructions of the
                          following exercise."
@@ -27,12 +36,15 @@ label profile_extension_choose_exercise:
 label profile_exercise_1:
     if photo_count == 0:
         jump profile_extension_choose_exercise
-    scene blank page
+    scene profile photo_description
     with fade
     photo_description_n "Photos capture a moment within one's lifetime. In a moment, a photo will
                        be shown on the screen. Please describe the photo and any stories that
                        are behind it or why the photo is of any importance if any."
     $number = random.randint(0,photo_count-1)
+    
+    scene blank page
+    with dissolve
 
     $ui.image(im.Scale(photo_directory[number],450,380,xcenter=0.5,ycenter=0.40))
     if photo_directory[number] not in photo_title:
@@ -47,7 +59,7 @@ label profile_exercise_1:
 # This exercise is named "Affirmation Builder". It prompts the user to add a new affirmation to 
 # his or her page and prompts the player to memorize the affirmation and recite it out loud.
 label profile_exercise_2:
-    scene blank page
+    scene profile affirmation_builder
     with fade
     affirmation_builder_n "Affirmations are powerful tools that can motivate or make oneself feel better by just reciting them. 
                            It is important to pick ones that you can relate to, or have a strong emotion towards. In this exercise 
@@ -56,9 +68,14 @@ label profile_exercise_2:
     $exercise_mode = True
     call add_affirmation
     $exercise_mode = False
+    scene profile affirmation_builder
+    with fade
     
     affirmation_builder_n "You have selected the following affirmation. Please remember and recite it out loud. During this time
                            think of your inner child and your promise to take care of him/her."
+    scene blank page
+    with dissolve
+    $ui.text(exercise_memory, color="000000ff",size=35,xcenter=0.5,ycenter=0.5) 
     affirmation_builder_n "%(exercise_memory)s"
     
     jump profile_extension_end
@@ -66,7 +83,7 @@ label profile_exercise_2:
 # This exercise is named "Journal Entry". It prompts the user to write a story they recall from
 # childhood or imagine a story where the inner child is at first in distress but calmed later.
 label profile_exercise_3:
-    scene blank page
+    scene profile journal_entry
     with fade
     journal_entry_n "Memories play an important role in defining us. In this exercise, try to remember a story or event that took
                      place during your childhood that is of importance to you. Try to write it in the 3rd person narrative, as if you 
@@ -93,7 +110,7 @@ label profile_exercise_3:
 label profile_exercise_4:
     if music_count == 0:
         jump profile_extension_choose_exercise
-    scene blank page
+    scene profile music_recollection
     with fade
     music_recollection_n "Music is a powerful tool in accessing past emotions and memories. It is important that you import more music
                           that reminds you of your childhood or just songs that make you feel good in general. In this exercise, you will

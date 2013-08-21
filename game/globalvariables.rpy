@@ -5,11 +5,14 @@ label globalvariables:
         # General Variables
         
         if not hasattr(renpy.store, "script_path"):
-            #script_path = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
-            script_path = "/Users/ZERO/Computing/GitHub/Secure Self-Attachment Therapy"
+            script_path = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
+            #script_path = "/Users/ZERO/Computing/GitHub/Secure Self-Attachment Therapy"
 
         if not hasattr(renpy.store, "first_time"):
-            first_time = False  #used to indicate whether it is the user's first time running the game
+            first_time = True  #used to indicate whether it is the user's first time running the game
+            
+        if not hasattr(renpy.store, "ai_guide"):
+            ai_guide = False
 
         if not hasattr(renpy.store, "name"):
             name = "Caleb Chiu"
@@ -63,13 +66,13 @@ label globalvariables:
         # Diary Variables
         
         if not hasattr(renpy.store, "journal_entry"):
-            journal_entry = [("3","When he was 3...")]
+            journal_entry = []
             
         if not hasattr(renpy.store, "journal_length"):
-            journal_length = 1
+            journal_length = 0
             
         if not hasattr(renpy.store, "journal_current"):
-            journal_current = 1
+            journal_current = 0
             
         # Photo Album Variables
         
@@ -115,6 +118,9 @@ label globalvariables:
             
         if not hasattr(renpy.store, "rounds_played"):
             rounds_played = 0
+            
+        if not hasattr(renpy.store, "total_rounds"):
+            total_rounds = 0
             
         # Game Logic Variables
         

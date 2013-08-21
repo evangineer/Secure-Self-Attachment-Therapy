@@ -497,7 +497,6 @@ label protocol:
 
 # End of tutorial for first time users
 label transition:
-    $first_time = False
     scene part1_ending
     with fade
     menu:
@@ -508,5 +507,8 @@ label transition:
         "No":
             "Remember if you wish to revisit the introduction and background information, it can be accessed in the main menu."
             "Let's begin the game by creating your inner child profile"
+            $name = renpy.input("Please enter your name",length=60)
+            $first_time = False
             jump part2_menu
+            
         

@@ -14,8 +14,8 @@ def setup_depression_questions():
             ["I don't cry any more than usual.","I cry more now than I used to.","I cry all the time now.","I used to be able to cry, but now I can't cry even though I want to."],\
             ["I am no more irratated by things than I ever was.","I am slightly more irritated now than usual.","I am quite annoyed or irritated a good deal of the time.","I feel irritated all the time."],\
             ["I have not lost interest in other people.","I am less interested in other people than I used to be.","I have lost most of my interest in other people.","I have lost all of my interest in other people."],\
-            ["I make decisions about as well as I ever could.","I put off making dicisions more than I used to.","I have greater difficulty in making decisions more than I used to.","I can't make decisions at all anymore."],\
-            ["I don;t feel that I look any worse than I used to.","I am worried that I am looking old or unattractive.","I feel there are permanent changes in my appearance that make me look unattractive.","I believe that I look ugly."],\
+            ["I make decisions about as well as I ever could.","I put off making decisions more than I used to.","I have greater difficulty in making decisions more than I used to.","I can't make decisions at all anymore."],\
+            ["I don't feel that I look any worse than I used to.","I am worried that I am looking old or unattractive.","I feel there are permanent changes in my appearance that make me look unattractive.","I believe that I look ugly."],\
             ["I can work about as well as before.","It takes extra effort to get started at doing something.","I have to push myself very hard to do anything.","I can't do any work at all."],\
             ["I can sleep as well as usual.","I don't sleep as well as I used to.","I wake up 1-2 hours earlier than usual and find it hard to get back to sleep.","I wake up several hours earlier than I used to and cannot get back to sleep."],\
             ["I don't get more tired than usual.","I get tired more easily than I used to.","I get tired from doing anything.","I am too tired to do anything."],\
@@ -72,11 +72,11 @@ def setup_anxiety_responses():
 def anxiety_score_meaning(score):
     if score >= 0 and score <= 21:
         return "Very low anxiety. That is usually a good thing. However, it is possible that you might be unrealistic in either your assessment which would be denial or that you have learned to 'mask' the symptoms commonly \
-                associated with anxiety. Too little 'anxiety' could indicate that you are detached from yourself, others, or your environment."
+            associated with anxiety. Too little 'anxiety' could indicate that you are detached from yourself, others, or your environment."
     elif score >= 22 and score <= 35:
         return "Moderate anxiety. Your body is trying to tell you something. Look for patterns as to when and why you experience the symptoms described above. For example, if it occurs prior to public speaking and your job \
             requires a lot of presentations you may want to find ways to calm yourself before speaking or let others do some of the presentations. You may have some conflict issues that need to be resolved. Clearly, it \
-            is not 'panic' time but you want to find ways to manage the stress you feel."
+                is not 'panic' time but you want to find ways to manage the stress you feel."
     elif score >= 36:
         return "Severe Anxiety. This is a potential for concern. Look for patterns or times when you tend to feel the symptoms you have described. Persistent and high anxiety is not a sign of personal weakness or failure. It \
             is, however, something that needs to be proactively treated or there could be significant impacts to you mentally and physically. You may want to consult a physician or counselor if the feeling persists."

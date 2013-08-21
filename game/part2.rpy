@@ -98,7 +98,8 @@ screen part2_menu_layout:
             child_size (None,5000)
             
             # title of diary entry
-            $ui.text("Age "+temp_age,color="#ff0002",xpos=10,ypos=8)
+            if temp_age != "":
+                $ui.text("Age "+temp_age,color="#ff0002",xpos=10,ypos=8)
             
             # content of diary entry
             $ui.text(temp_entry,color="#2a3d00ff",xpos=10,ypos=48)
@@ -131,7 +132,11 @@ label part2_menu:
     $photo_count = len(photo_directory)
     # load up selected diary entry
     python:
-        temp_age,temp_entry = journal_entry[journal_current-1]
+        if journal_length != 0:
+            temp_age,temp_entry = journal_entry[journal_current-1]
+        else:
+            temp_age = ""
+            temp_entry = ""
     scene part2_menu setup
     with fade
     # activates the function of the part 2 menu

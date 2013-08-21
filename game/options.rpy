@@ -13,7 +13,7 @@ init -1 python hide:
     ## set to False before the game is released, so the user can't
     ## cheat using developer tools.
 
-    config.developer = True
+    config.developer = False
 
     ## These control the width and height of the screen.
     
@@ -27,6 +27,8 @@ init -1 python hide:
     ## running in a window.
 
     config.window_title = u"Secure Self-Attachment Therapy"
+    
+    config.window_icon = "logo.png"
 
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.

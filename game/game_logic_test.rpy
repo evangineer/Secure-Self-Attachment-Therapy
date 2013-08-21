@@ -63,12 +63,20 @@ label ai_test:
     
     if(result == "round"):
         jump ai_test
-    
+        
+    if result == "end":
+        while(round(ai.probability_matrix[0],2) != 1.00):
+            $choice = ai.move()
+        jump ai_test
+
 screen ai_test_setup:
     hbox xalign 0.5 yalign 0.5 spacing 50:
         vbox spacing 50:
             hbox spacing 10:
-                textbutton _("AI") action Return("round")
+                textbutton _("AI Move") action Return("round")
+                
+            hbox spacing 10:
+                textbutton _("AI End") action Return("end")
             
             hbox spacing 10:
                 textbutton _("Rounds: " + str(ai.get_round())) 
@@ -150,12 +158,20 @@ label ai2_test:
     
     if(result == "round"):
         jump ai2_test
+        
+    if result == "end":
+        while(round(ai2.p_probability_matrix[0],2) != 1.00):
+            $choice = ai2.move()
+        jump ai2_test
     
 screen ai2_test_setup:
     hbox xalign 0.5 yalign 0.5 spacing 50:
         vbox spacing 50:
             hbox spacing 10:
-                textbutton _("AI") action Return("round")
+                textbutton _("AI2 Round") action Return("round")
+                
+            hbox spacing 10:
+                textbutton _("AI2 End") action Return("end")
             
             hbox spacing 10:
                 textbutton _("Rounds: " + str(ai2.get_round())) 
