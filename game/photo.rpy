@@ -29,8 +29,9 @@ screen photo_menu_layout:
         yminimum 37
         ymaximum 37
         
-        if photo_directory[selected_photo] in photo_title:
-            $ui.text(photo_title[photo_directory[selected_photo]], color="#2a3d00ff",xalign=0.5)
+        if photo_count != 0:
+            if photo_directory[selected_photo] in photo_title:
+                $ui.text(photo_title[photo_directory[selected_photo]], color="#2a3d00ff",xalign=0.5)
 
     # create the photo number box for the photo page
     frame id "frame_photo_number_box":
@@ -41,7 +42,8 @@ screen photo_menu_layout:
         yminimum 37
         ymaximum 37
         
-        $ui.text("No: " + str(selected_photo + 1) + " of " + str(photo_count),color="#2a3d00ff",xalign=0.5)
+        if photo_count != 0:
+            $ui.text("No: " + str(selected_photo + 1) + " of " + str(photo_count),color="#2a3d00ff",xalign=0.5)
 
     # create the photo album frame for the photo page
     frame id "frame_photo_album":
@@ -62,13 +64,15 @@ screen photo_menu_layout:
             ypos 0
             child_size (None,1500)
             
-            if photo_directory[selected_photo] in photo_detail:
-                $ui.image(im.Scale(photo_directory[selected_photo],450,380,xpos=120,ypos= 30))
-                $ui.text(photo_detail[photo_directory[selected_photo]],color="#2a3d00ff",xpos=10,ypos=450)
+            if photo_count != 0:
+            
+                if photo_directory[selected_photo] in photo_detail:
+                    $ui.image(im.Scale(photo_directory[selected_photo],450,380,xpos=120,ypos= 30))
+                    $ui.text(photo_detail[photo_directory[selected_photo]],color="#2a3d00ff",xpos=10,ypos=450)
                 
-            else:
-                $ui.image(im.Scale(photo_directory[selected_photo],450,380,xpos=120,ypos= 30))
-                $ui.text("",color="#2a3d00ff",xpos=10,ypos=450)
+                else:
+                    $ui.image(im.Scale(photo_directory[selected_photo],450,380,xpos=120,ypos= 30))
+                    $ui.text("",color="#2a3d00ff",xpos=10,ypos=450)
         
     # create buttons for interactions with the photo page
     frame id "refresh_photo":

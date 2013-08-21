@@ -247,11 +247,6 @@ Music/Israel Kamakawiwo'ole - Somewhere Over The Rainbow.mp3 matches ** ([u'all'
 Music/Louis Armstrong - What A Wonderful World.mp3 matches ** ([u'all']).
 Photos/ matches ** ([u'all']).
 Photos/.DS_Store matches **/.** (None).
-Photos/Dog.jpg matches ** ([u'all']).
-Photos/House.jpg matches ** ([u'all']).
-Photos/Park.JPG matches ** ([u'all']).
-Photos/Playground.jpg matches ** ([u'all']).
-Photos/Profile Photo.jpg matches ** ([u'all']).
 README.html matches ** ([u'all']).
 tmp/ matches tmp/ (None).
 traceback.txt matches traceback.txt (None).
