@@ -7,7 +7,7 @@ define affirmation_n = Character('Affirmation', color="c8ffc8")
 
 # import images used in this scene
 image affirmation load = "images/part2/affirmation/image_affirmation_layout.png"
-image affirmation loaded = "images/part2/affitmation/image_affirmation_setup.png"
+image affirmation loaded = "images/part2/affirmation/image_affirmation_setup.png"
 image affirmation general = "images/part2/affirmation/image_affirmation.png"
 
 screen affirmation_menu_layout:
@@ -207,7 +207,7 @@ label add_affirmation:
     menu:
         "Would you like to add an existing affirmation or create a new one?"
         "Existing Affirmation":
-            jump default_affirmation_loop
+            jump default_affirmation_start
         "Custom Affirmation":
             jump custom_affirmation
     

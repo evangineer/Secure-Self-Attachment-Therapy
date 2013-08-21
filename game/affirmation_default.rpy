@@ -132,7 +132,7 @@ screen default_affirmation_menu_layout:
         
 # label to set up the affirmation page layout
 label default_affirmation_start:
-    scene default_affirmation load
+    scene affirmation load
     with fade
     # activate the function of the affirmation page
     jump default_affirmation_loop
@@ -147,7 +147,7 @@ label default_affirmation_loop:
         if exercise_mode == True:
             jump add_affirmation
         else:
-            jump affirmation_loop
+            jump affirmation_start
         
     elif result == "_all_affirmations":
         $default_selected_genre = "All"
@@ -199,7 +199,7 @@ label default_add_affirmation:
         elif default_selected_affirmation in default_self_esteem_affirmation:
             $self_esteem_affirmation.append(default_selected_affirmation)
             $selected_genre = "Self-Esteem"
-        jump affirmation_loop
+        jump affirmation_start
 
         
 

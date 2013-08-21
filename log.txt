@@ -1,4 +1,4 @@
-Wed Aug 21 17:37:39 2013
+Wed Aug 21 18:05:04 2013
 Darwin-12.4.0-x86_64-i386-64bit
 Ren'Py 6.15.7.374
 Secure Self-Attachment Therapy 0.0
@@ -12,10 +12,10 @@ Version: '2.1 NVIDIA-8.12.47 310.40.00.05f01'
 Display Info: <VideoInfo(hw = 0, wm = 1,video_mem = 0
 	     blit_hw = 0, blit_hw_CC = 0, blit_hw_A = 0,
 	     blit_sw = 0, blit_sw_CC = 0, blit_sw_A = 0,
-	     bitsize  = 128, bytesize = 20,
-	     masks =  (0, 1580, 0, 2062885760),
-	     shifts = (0, 0, 44, 6),
-	     losses =  (0, 0, 1, 0),
+	     bitsize  = 16, bytesize = 62,
+	     masks =  (0, 0, 0, 24293792),
+	     shifts = (0, 0, 0, 0),
+	     losses =  (7, 2, 1, 0),
 	     current_w = 1680, current_h = 1050
 >
 
@@ -172,45 +172,11 @@ Texture testing:
 Performance test:
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.006000 seconds.
-- Frame drawn at 0.011000 seconds.
-- Frame drawn at 0.026000 seconds.
-- Frame drawn at 0.043000 seconds.
-- 0.043000 seconds to render 5 frames.
-Traceback (most recent call last):
-  File "/Users/ZERO/Computing/Ren'Py/renpy/execution.py", line 288, in run
-    node.execute()
-  File "/Users/ZERO/Computing/Ren'Py/renpy/ast.py", line 1531, in execute
-    self.call("execute")
-  File "/Users/ZERO/Computing/Ren'Py/renpy/ast.py", line 1544, in call
-    renpy.statements.call(method, parsed, *args, **kwargs)
-  File "/Users/ZERO/Computing/Ren'Py/renpy/statements.py", line 100, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 543, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "/Users/ZERO/Computing/Ren'Py/renpy/exports.py", line 1621, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "/Users/ZERO/Computing/Ren'Py/renpy/ui.py", line 237, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "/Users/ZERO/Computing/Ren'Py/renpy/display/core.py", line 1864, in interact
-    scene_lists.replace_transient()
-  File "/Users/ZERO/Computing/Ren'Py/renpy/display/core.py", line 558, in replace_transient
-    self.remove(layer, tag)
-  File "/Users/ZERO/Computing/Ren'Py/renpy/display/core.py", line 832, in remove
-    self.hide_or_replace(layer, remove_index, "hide")
-  File "/Users/ZERO/Computing/Ren'Py/renpy/display/core.py", line 756, in hide_or_replace
-    d = oldsle.displayable._hide(now - st, now - at, prefix)
-  File "/Users/ZERO/Computing/Ren'Py/renpy/display/screen.py", line 189, in _hide
-    hid.update()
-  File "/Users/ZERO/Computing/Ren'Py/renpy/display/screen.py", line 266, in update
-    self.screen.function(**self.scope)
-  File "/Users/ZERO/Computing/Ren'Py/renpy/screenlang.py", line 1217, in __call__
-    renpy.python.py_exec_bytecode(self.code.bytecode, locals=scope)
-  File "/Users/ZERO/Computing/Ren'Py/renpy/python.py", line 1297, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/part2.rpy", line 33, in <module>
-    if profile_set == False:
-NameError: name 'profile_set' is not defined
+- Frame drawn at 0.010000 seconds.
+- Frame drawn at 0.019000 seconds.
+- Frame drawn at 0.035000 seconds.
+- Frame drawn at 0.052000 seconds.
+- 0.052000 seconds to render 5 frames.
 Deallocating textures.
 Done deallocating textures.
 About to quit GL.
