@@ -136,7 +136,7 @@ screen part1_menu_layout:
 # determines the function of the back button
 label part1_menu_back:
     if first_time == True:
-        jump transistion
+        jump transition
     else:
         jump part2_menu
 

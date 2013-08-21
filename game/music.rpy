@@ -104,7 +104,7 @@ label music_start:
     $music_path = os.path.join(script_path, "Music/*")
     $music_directory = glob.glob(music_path)
     $music_count = len(music_directory)
-    if music_count != 0
+    if music_count != 0:
         python:
             for i in range(music_count):
                 if music_directory[i] not in music_title:

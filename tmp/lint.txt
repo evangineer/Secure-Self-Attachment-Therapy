@@ -1,9 +1,7 @@
 ﻿
-Ren'Py 6.15.7.374 lint report, generated at: Wed Aug 21 18:06:33 2013
+Ren'Py 6.15.7.374 lint report, generated at: Wed Aug 21 18:20:46 2013
 
-game/music.rpy:176 unable to evaluate filename u'music_directory[selected_music]'
-
-game/part1.rpy:139 The jump is to nonexistent label 'transistion'.
+game/music.rpy:181 unable to evaluate filename u'music_directory[selected_music]'
 
 game/profile_extension.rpy:120 unable to evaluate filename u'music_directory[number]'
 

@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/game_status.rpy", line 206: frame expects a non-empty block.
-    frame id "score_back":
-                          ^
+File "game/music.rpy", line 107: reached end of line when expecting ':'.
+    if music_count != 0
+                       ^
 
 Ren'Py Version: Ren'Py 6.15.7.374
