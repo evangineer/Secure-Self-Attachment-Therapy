@@ -29,8 +29,9 @@ screen music_menu_layout:
         yminimum 37
         ymaximum 37
 
-        if music_directory[selected_music] in music_title:
-            $ui.text(music_title[music_directory[selected_music]], color="2a3d00ff",xalign=0.5)
+        if music_count != 0:
+            if music_directory[selected_music] in music_title:
+                $ui.text(music_title[music_directory[selected_music]], color="2a3d00ff",xalign=0.5)
             
     # create the music number box for the music page
     frame id "frame_music_number_box":
@@ -41,7 +42,8 @@ screen music_menu_layout:
         yminimum 37
         ymaximum 37
 
-        $ui.text("No: " + str(selected_music + 1) + " of " + str(music_count),color="#2a3d00ff",xalign=0.5)
+        if music_count != 0:
+            $ui.text("No: " + str(selected_music + 1) + " of " + str(music_count),color="#2a3d00ff",xalign=0.5)
         
     # create the lyrics frame for the music page
     frame id "frame_music_lyrics":
@@ -62,8 +64,9 @@ screen music_menu_layout:
             ypos 0
             child_size (None,5000)
             
-            if music_directory[selected_music] in music_lyrics:
-                $ui.text(music_lyrics[music_directory[selected_music]], color="2a3d00ff",xpos=10,ypos=8)  
+            if music_count != 0:
+                if music_directory[selected_music] in music_lyrics:
+                    $ui.text(music_lyrics[music_directory[selected_music]], color="2a3d00ff",xpos=10,ypos=8)  
         
     # create buttons for interactions with the music page
     frame id "refresh_music":
@@ -101,10 +104,11 @@ label music_start:
     $music_path = os.path.join(script_path, "Music/*")
     $music_directory = glob.glob(music_path)
     $music_count = len(music_directory)
-    python:
-        for i in range(music_count):
-            if music_directory[i] not in music_title:
-                music_title[music_directory[i]] = os.path.basename(music_directory[i])
+    if music_count != 0
+        python:
+            for i in range(music_count):
+                if music_directory[i] not in music_title:
+                    music_title[music_directory[i]] = os.path.basename(music_directory[i])
     scene music setup
     with fade
     # activate the function of the music page
@@ -144,10 +148,11 @@ label refresh_music:
     $music_path = os.path.join(script_path, "Music/*")
     $music_directory = glob.glob(music_path)
     $music_count = len(music_directory)
-    python:
-        for i in range(music_count):
-            if music_directory[i] not in music_title:
-                music_title[music_directory[i]] = os.path.basename(music_directory[i])
+    if music_count != 0:
+        python:
+            for i in range(music_count):
+                if music_directory[i] not in music_title:
+                    music_title[music_directory[i]] = os.path.basename(music_directory[i])
     jump music_loop
     
 label next_song:
